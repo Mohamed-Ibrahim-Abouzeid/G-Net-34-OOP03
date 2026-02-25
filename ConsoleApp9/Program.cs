@@ -31,29 +31,46 @@ namespace ConsoleApp9
             //Because the method temporarily depends on Logger to do something.
             #endregion
             #region Q2
-//            a)
+            //            a)
 
-//Yes, a child class in a different assembly can access a protected field, but only through inheritance(inside the child class).
+            //Yes, a child class in a different assembly can access a protected field, but only through inheritance(inside the child class).
 
-//No, it cannot access it using an object instance from outside the class.
+            //No, it cannot access it using an object instance from outside the class.
 
-//b)
+            //b)
 
-//protected internal -> Accessible from the same assembly OR from derived classes in other assemblies.
+            //protected internal -> Accessible from the same assembly OR from derived classes in other assemblies.
 
-//private protected -> Accessible only within the same assembly AND only in derived classes.
+            //private protected -> Accessible only within the same assembly AND only in derived classes.
 
-//c)
+            //c)
 
-//When sealed is applied to a class -> The class cannot be inherited.
+            //When sealed is applied to a class -> The class cannot be inherited.
 
-//When sealed is applied to a method -> The method cannot be overridden again in further derived classes.
+            //When sealed is applied to a method -> The method cannot be overridden again in further derived classes.
 
-//d)
-//Yes, you can create an object from a sealed class using new.
-//Sealed only prevents inheritance, not object creation.
+            //d)
+            //Yes, you can create an object from a sealed class using new.
+            //Sealed only prevents inheritance, not object creation.
             #endregion
-    #endregion
+            #endregion
+            #region Part2
+            Cinema cinema = new Cinema("Galaxy Cinema");
+
+            cinema.OpenCinema();
+
+            Ticket t1 = new StandardTicket("Inception", 120, "A-5");
+            Ticket t2 = new VIPTicket("Avengers", 200, true);
+            Ticket t3 = new IMAXTicket("Dune", 180, false);
+
+            cinema.AddTicket(t1);
+            cinema.AddTicket(t2);
+            cinema.AddTicket(t3);
+
+            cinema.PrintAllTickets();
+
+            cinema.CloseCinema();
+            #endregion
         }
     }
 }
