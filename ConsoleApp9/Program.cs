@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Reflection.Metadata;
+using System.Security.AccessControl;
 
 namespace ConsoleApp9
 {
@@ -9,27 +10,50 @@ namespace ConsoleApp9
         {
             #region Part01
             #region Q1
-//            a) A University has Departments. If the university is closed, the departments no longer exist.
-//-> Composition
-//Because the departments cannot exist without the university.
+            //            a) A University has Departments. If the university is closed, the departments no longer exist.
+            //-> Composition
+            //Because the departments cannot exist without the university.
 
-//b) A Driver uses a Car.The driver does not own the car.
-//-> Association
-//Because the driver just uses the car, but both can exist independently.
+            //b) A Driver uses a Car.The driver does not own the car.
+            //-> Association
+            //Because the driver just uses the car, but both can exist independently.
 
-//c) A Dog is an Animal.
-//-> Inheritance
-//Because Dog is a type of Animal(IS-A relationship).
+            //c) A Dog is an Animal.
+            //-> Inheritance
+            //Because Dog is a type of Animal(IS-A relationship).
 
-//d) A Team has Players. If the team is deleted, the players still exist.
-//-> Aggregation
-//Because players can exist without the team.
+            //d) A Team has Players. If the team is deleted, the players still exist.
+            //-> Aggregation
+            //Because players can exist without the team.
 
-//e) A method receives a Logger as a parameter and calls it inside the method only.
-//-> Dependency
-//Because the method temporarily depends on Logger to do something.
+            //e) A method receives a Logger as a parameter and calls it inside the method only.
+            //-> Dependency
+            //Because the method temporarily depends on Logger to do something.
             #endregion
-                #endregion
+            #region Q2
+//            a)
+
+//Yes, a child class in a different assembly can access a protected field, but only through inheritance(inside the child class).
+
+//No, it cannot access it using an object instance from outside the class.
+
+//b)
+
+//protected internal -> Accessible from the same assembly OR from derived classes in other assemblies.
+
+//private protected -> Accessible only within the same assembly AND only in derived classes.
+
+//c)
+
+//When sealed is applied to a class -> The class cannot be inherited.
+
+//When sealed is applied to a method -> The method cannot be overridden again in further derived classes.
+
+//d)
+//Yes, you can create an object from a sealed class using new.
+//Sealed only prevents inheritance, not object creation.
+            #endregion
+    #endregion
         }
     }
 }
